@@ -21,7 +21,8 @@ class MyGame{
                     this.exit();
                     break;
                 default:
-                    System.out.println("invalid option, please try again");
+                    System.out.println("invalid option, please try again \n");
+                    this.start();
             }
         }
 
