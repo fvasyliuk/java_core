@@ -58,7 +58,11 @@ class MyGame{
                 System.out.println(String.format("You: %s, Computer: %s \n", player, computer) );
             } catch (Exception e) {
                 System.out.println("Something went wrong.");
+            } finally {
+                this.start();
             }
+            
+            
             
         }
     }
