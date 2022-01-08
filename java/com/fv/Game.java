@@ -13,11 +13,12 @@ class MyGame{
             this.printOptions();
             Scanner scanner = new Scanner(System.in);
             String option = scanner.nextLine();
+    
             switch (option) {
                 case "1":
                     this.play();
                     break;
-                 case "2": 
+                case "2": 
                     this.exit();
                     break;
                 default:
@@ -40,21 +41,24 @@ class MyGame{
         }
 
         private void play() {
-            System.out.println("Start game");
-            Random rand = new Random();
+            try {
+                System.out.println("Start game");
+                Random rand = new Random();
 
-            int player = rand.nextInt(12);
-            int computer = rand.nextInt(12);
-            
-            if (player > computer) {
-                System.out.println("You are the winner");
-            } else if (player < computer) {
-                System.out.println("You are the loser");
-            } else {
-                System.out.println("Equivalent result, try again");
+                int player = rand.nextInt(12);
+                int computer = rand.nextInt(12);
+                
+                if (player > computer) {
+                    System.out.println("You are the winner");
+                } else if (player < computer) {
+                    System.out.println("You are the loser");
+                } else {
+                    System.out.println("Equivalent result, try again");
+                }
+                System.out.println(String.format("You: %s, Computer: %s \n", player, computer) );
+            } catch (Exception e) {
+                System.out.println("Something went wrong.");
             }
-            System.out.println(String.format("You: %s, Computer: %s \n", player, computer) );
             
-            this.start();
         }
     }
